@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link href="/css/output.css" rel="stylesheet" />
+  <style>
+    /* Set background image */
+    body {
+      background-image: url('https://planner5d.com/blog/content/images/2024/06/rooms-in-the-house.jpg'); /* Add your image URL here */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+      transition: all 0.5s ease-in-out;
+    }
+
+    /* Overlay for background */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* Styling the login container */
+    .login-container {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 380px;
+      animation: slideIn 0.8s ease-out;
+    }
+
+    .login-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Input styling */
+    .form-input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      outline: none;
+      background: #1a1a1a;
+      color: #fff;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-input:focus {
+      border-color: #4c8bf5;
+      box-shadow: 0 0 8px rgba(76, 139, 245, 0.7);
+    }
+
+    /* Button styling */
+    .form-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4c8bf5;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .form-button:hover {
+      background-color: #357ae8;
+      transform: scale(1.05);
+    }
+
+    /* Link text and hover effect */
+    .link-text {
+      color: #4c8bf5;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 15px;
+    }
+
+    .link-text a {
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .link-text a:hover {
+      color: #357ae8;
+    }
+
+    /* Error messages styling */
+    .error-message {
+      color: #ff3b3b;
+      font-size: 0.875rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Animation for the login form */
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Additional glow effects for inputs and buttons */
+    .form-input:focus,
+    .form-button:hover {
+      box-shadow: 0 0 15px rgba(76, 139, 245, 0.7);
+    }
+
+    /* Subtle pulse animation for the button */
+    .form-button:active {
+      transform: scale(0.98);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="login-container">
+    <h1 class="login-title">Welcome Back!</h1>
+    <form action="/login" method="POST" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-input"
+          required
+          value="<%= email ? email : '' %>"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-input"
+          required
+        />
+      </div>
+
+      <!-- Display flash messages for invalid credentials -->
+      <% if (message && message.length > 0) { %>
+        <div class="error-message">
+          <%= message %>
+        </div>
+      <% } %>
+
+      <button
+        type="submit"
+        class="form-button"
+      >
+        Login
+      </button>
+    </form>
+    <p class="link-text">
+      Don't have an account? 
+      <a href="/signup" class="hover:underline">Sign Up</a>
+    </p>
+  </div>
+</body>
+</html>

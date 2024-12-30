@@ -1,0 +1,52 @@
+<div class="NavBarDesk&Mob">
+    <!-- Mobile Navbar Toggle -->
+    <div class="block lg:hidden fixed top-0 w-full z-50">
+       <div class="flex items-center gap-8 bg-slate-200 px-2 py-2 shadow-md">
+           <img class="h-12 " src="/images/homeLogo.png" alt="logo">
+           <h1 class="text-xl font-bold">Find Your Room</h1>
+           <button id="mobile-menu-button" class="text-2xl">
+               <i class="ri-menu-line"></i>
+           </button>
+       </div>
+       <div id="mobile-menu" class=" bg-white shadow-lg flex flex-col items-center gap-4 p-4">
+           <a href="./" class="hover:text-black">Home</a>
+           <a href="./about" class="hover:text-black">About</a>
+           <a href="./contact" class="hover:text-black">Contact</a>
+           <a href="#" class="hover:text-black">Details</a>
+           <div class="flex gap-3 text-xl pt-4">
+               <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+               <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+               <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+           </div>
+       </div>
+   </div>
+   <!-- Desktop Navbar -->
+   <div class="navbar hidden lg:flex h-[100px] w-full bg-slate-100 items-center justify-between pr-10 drop-shadow-xl fixed z-[1200]">
+       <div class="navpart1 flex items-center">
+           <img class="h-[100px]" src="/images/homeLogo.png" alt="">
+           <div class="links text-xl pl-10 flex gap-12">
+               <a href="./" class="hover:border-b-2 hover:border-black">Home</a>
+               <a href="./about" class="hover:border-b-2 hover:border-black">About</a>
+               <a href="./contact" class="hover:border-b-2 hover:border-black">Contact</a>
+               <a href="#" class="hover:border-b-2 hover:border-black">Details</a>
+           </div>
+       </div>
+       <div class="navpart2 flex gap-3 text-xl">
+           <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+           <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+           <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+           <div class="flex items-center">
+               <i class="ri-search-line"></i>
+               <input class="outline-none ml-2" type="text" placeholder="Search">
+           </div>
+           <div><i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
+       </div>
+   </div>
+   <div class="fakenav h-[100px] w-full bg-white lg:block hidden"></div>
+   <script>
+       // Mobile Menu Toggle
+       document.getElementById("mobile-menu-button").addEventListener("click", function () {
+           document.getElementById("mobile-menu").classList.toggle("hidden");
+       });
+   </script>
+  </div>

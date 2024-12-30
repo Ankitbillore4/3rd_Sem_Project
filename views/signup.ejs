@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-to-r from-indigo-600 to-indigo-900 h-screen flex items-center justify-center" style="background-image: url('https://goodhomes.wwmindia.com/content/2022/dec/drawingroomdesignbestdrawingroomdesignideaslivingroominteriordesi251671005634.jpg'); background-size: cover; background-position: center;">
+
+  <div class="bg-black bg-opacity-80 p-8 rounded-lg shadow-xl w-full max-w-md">
+    <h1 class="text-4xl font-semibold text-center text-white mb-6">Create an Account</h1>
+
+    <form action="/signup" method="POST" class="space-y-6">
+      <div class="flex flex-col">
+        <label for="name" class="text-sm font-medium text-white mb-2">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all duration-300 ease-in-out hover:border-indigo-500"
+          placeholder="Enter your full name"
+          required
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="email" class="text-sm font-medium text-white mb-2">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all duration-300 ease-in-out hover:border-indigo-500"
+          placeholder="Enter your email address"
+          required
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="password" class="text-sm font-medium text-white mb-2">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all duration-300 ease-in-out hover:border-indigo-500"
+          placeholder="Create a strong password"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-indigo-700 text-white py-3 rounded-lg hover:bg-indigo-800 transition duration-300 ease-in-out transform hover:scale-105"
+      >
+        Sign Up
+      </button>
+    </form>
+
+    <p class="mt-4 text-sm text-center text-gray-700">
+      Already have an account?
+      <a href="/login" class="text-indigo-600 hover:underline">Login</a>
+    </p>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Finder</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="font-[gilroy] overflow-x-hidden">
+    <div class="main bg-white min-h-screen w-screen ">
+       <div class="NavBarDesk&Mob">
+         <!-- Mobile Navbar Toggle -->
+         <div class="block lg:hidden fixed top-0 w-full z-50">
+            <div class="flex items-center gap-8 bg-slate-200 px-2 py-2 shadow-md">
+                <img class="h-12 " src="/images/homeLogo.png" alt="logo">
+                <h1 class="text-xl font-bold">Find Your Room</h1>
+                <button id="mobile-menu-button" class="text-2xl">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class=" bg-white shadow-lg flex flex-col items-center gap-4 p-4">
+                <a href="./" class="hover:text-black">Home</a>
+                <a href="./about" class="hover:text-black">About</a>
+                <a href="./contact" class="hover:text-black">Contact</a>
+                <a href="#" class="hover:text-black">Details</a>
+                <a href="./login.ejs" class="hover:text-black ">Login</a>
+                <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                <div class="flex gap-3 text-xl pt-4">
+                    <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+                    <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Desktop Navbar -->
+        <div class="navbar hidden lg:flex h-[100px] w-full bg-slate-100 items-center justify-between pr-10 drop-shadow-xl fixed z-[1200]">
+            <div class="navpart1 flex items-center">
+                <img class="h-[100px]" src="/images/homeLogo.png" alt="">
+                <div class="links text-xl pl-10 flex gap-12">
+                    <a href="./" class="hover:border-b-2 hover:border-black">Home</a>
+                    <a href="./about" class="hover:border-b-2 hover:border-black">About</a>
+                    <a href="./contact" class="hover:border-b-2 hover:border-black">Contact</a>
+                    <a href="#" class="hover:border-b-2 hover:border-black">Details</a>
+                    <a href="./login.ejs" class="hover:text-black ">Login</a>
+                    <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                </div>
+            </div>
+            <div class="navpart2 flex gap-3 text-xl">
+                <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+                <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+                <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+                <div class="flex items-center">
+                    <i class="ri-search-line"></i>
+                    <input class="outline-none ml-2" type="text" placeholder="Search">
+                </div>
+                <div>
+                    <i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
+            </div>
+            <div>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="fakenav h-[100px] w-full bg-white lg:block hidden"></div>
+        <script>
+            // Mobile Menu Toggle
+            document.getElementById("mobile-menu-button").addEventListener("click", function () {
+                document.getElementById("mobile-menu").classList.toggle("hidden");
+            });
+        </script>
+       </div>
+        <img src="https://media.architecturaldigest.com/photos/62f3c04c5489dd66d1d538b9/16:9/w_2560%2Cc_limit/_Hall_St_0256_v2.jpeg" class="w-full object-cover h-[50vh] lg:h-[80vh]" alt="">
+
+        <div class="roomfinder text-center pt-10 px-4 lg:absolute lg:top-[200px] lg:left-[425px]">
+            <h1 class="text-5xl font-bold">Room Finder</h1>
+            <p class="text-black text-xl font-semibold bg-white px-4 py-2 rounded-2xl border mt-3">Find your perfect room
+                for rent, whether you're a student or a family.</p>
+        </div>
+
+        <!-- Features Section -->
+        <div class="Features text-center pt-10 px-4 lg:absolute lg:top-[400px] lg:left-[100px]">
+            <h2 class="text-4xl font-bold">Features</h2>
+            <div class="flex flex-col lg:flex-row justify-center mt-8 gap-4">
+                <div class="featurebox bg-black shadow p-6 rounded-xl text-white">
+                    <h3 class="text-xl font-bold">Easy to Use</h3>
+                    <p>Our platform is designed to be user-friendly and easy to navigate.</p>
+                </div>
+                <div class="featurebox bg-slate-100 shadow p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-black">Affordable</h3>
+                    <p class="text-black">We offer a wide range of rooms to fit any budget.</p>
+                </div>
+                <div class="featurebox bg-black shadow p-6 rounded-xl text-white">
+                    <h3 class="text-xl font-bold">Secure</h3>
+                    <p>We prioritize the safety and security of our users.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family and Student Section -->
+        <div class="famstd flex flex-col lg:flex-row w-full mt-10 gap-10 justify-center items-center px-4">
+            <div class="family w-full lg:w-[27%] bg-slate-100 rounded-2xl drop-shadow-2xl shadow-black">
+                <img class="h-52 w-full object-cover rounded-xl" src="https://bambiniphoto.sg/wp-content/uploads/family-photography-bambini-025.jpg" alt="">
+                <h1 class="text-4xl pt-2 font-semibold text-center">Family's</h1>
+            </div>
+            <div class="student w-full lg:w-[27%] bg-slate-100 rounded-2xl drop-shadow-2xl shadow-black">
+                <img class="h-52 w-full object-cover rounded-xl" src="https://t3.ftcdn.net/jpg/03/88/97/92/360_F_388979227_lKgqMJPO5ExItAuN4tuwyPeiknwrR7t2.jpg" alt="">
+                <h1 class="text-4xl pt-2 font-semibold text-center">Student's</h1>
+            </div>
+        </div>
+
+        <!-- Room Cards -->
+        <div class="room-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 px-4">
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <!-- Repeat the card for all other rooms as needed, maintaining the same structure -->
+        </div>
+        <div class="room-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 px-4">
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <!-- Repeat the card for all other rooms as needed, maintaining the same structure -->
+        </div>
+        <div class="room-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 px-4">
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white p-4">
+                <img class="h-32 w-full object-cover rounded-2xl" src="https://apollo.olx.in/v1/files/yhr8vrnyzzvs2-IN/image;s=300x600;q=60" alt="">
+                <h1 class="text-xl pt-2"><i class="ri-money-rupee-circle-line"></i>3,500</h1>
+                <h1>1 Bhk, <i class="ri-map-pin-line"></i><a href="https://www.google.com/maps">Location</a></h1>
+            </div>
+            <!-- Repeat the card for all other rooms as needed, maintaining the same structure -->
+        </div>
+        <div class="last w-full bg-black mt-16 py-16">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-7xl leading-tight">Home Away From <br> Home</h1>
+                <div class="button mt-8 flex flex-wrap justify-center gap-6">
+                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl">billoreankit66@gmail.com</span>
+                    </div>
+                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl">+91-9343432490</span>
+                    </div>
+                </div>
+            </div>
+        <!-- Footer -->
+            <div class="footer flex flex-wrap justify-between items-center gap-6 mt-8 text-white text-sm px-4 md:px-20">
+                <div class="details">
+                    <h1>Privacy Policy</h1>
+                    <h1>About</h1>
+                    <h1>Terms & Conditions</h1>
+                </div>
+                <div class="social">
+                    <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+                    <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+   
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body class="font-[gilroy]">
+    <div class="main h-screen w-screen">
+        <div class="NavBarDesk&Mob">
+            <!-- Mobile Navbar Toggle -->
+            <div class="block lg:hidden fixed top-0 w-full z-50">
+               <div class="flex items-center gap-8 bg-slate-200 px-2 py-2 shadow-md">
+                   <img class="h-12 " src="/images/homeLogo.png" alt="logo">
+                   <h1 class="text-xl font-bold">Find Your Room</h1>
+                   <button id="mobile-menu-button" class="text-2xl">
+                       <i class="ri-menu-line"></i>
+                   </button>
+               </div>
+               <div id="mobile-menu" class=" bg-white shadow-lg flex flex-col items-center gap-4 p-4">
+                   <a href="./" class="hover:text-black">Home</a>
+                   <a href="./about" class="hover:text-black">About</a>
+                   <a href="./contact" class="hover:text-black">Contact</a>
+                   <a href="#" class="hover:text-black">Details</a>
+                   <a href="./login.ejs" class="hover:text-black ">Login</a>
+                   <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                   <div class="flex gap-3 text-xl pt-4">
+                       <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+                       <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+                       <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+                   </div>
+               </div>
+           </div>
+           <!-- Desktop Navbar -->
+           <div class="navbar hidden lg:flex h-[100px] w-full bg-slate-100 items-center justify-between pr-10 drop-shadow-xl fixed z-[1200]">
+               <div class="navpart1 flex items-center">
+                   <img class="h-[100px]" src="/images/homeLogo.png" alt="">
+                   <div class="links text-xl pl-10 flex gap-12">
+                       <a href="./" class="hover:border-b-2 hover:border-black">Home</a>
+                       <a href="./about" class="hover:border-b-2 hover:border-black">About</a>
+                       <a href="./contact" class="hover:border-b-2 hover:border-black">Contact</a>
+                       <a href="#" class="hover:border-b-2 hover:border-black">Details</a>
+                       <a href="./login.ejs" class="hover:text-black ">Login</a>
+                       <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                   </div>
+               </div>
+               <div class="navpart2 flex gap-3 text-xl">
+                   <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+                   <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+                   <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+                   <div class="flex items-center">
+                       <i class="ri-search-line"></i>
+                       <input class="outline-none ml-2" type="text" placeholder="Search">
+                   </div>
+                   <div><i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
+               </div>
+           </div>
+           <div class="fakenav h-[100px] w-full bg-white lg:block hidden"></div>
+           <script>
+               // Mobile Menu Toggle
+               document.getElementById("mobile-menu-button").addEventListener("click", function () {
+                   document.getElementById("mobile-menu").classList.toggle("hidden");
+               });
+           </script>
+          </div>
+          <div class="relative">
+           
+                <img class="h-[300px] sm:h-[400px] md:h-full w-full object-cover" src="https://img.freepik.com/free-photo/green-sofa-white-living-room-with-free-space_43614-834.jpg" alt="">
+    <div class="contact w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] text-xl sm:text-2xl font-semibold absolute top-[10%] left-1/2 transform -translate-x-1/2 mt-[30px] sm:mt-[50px] px-4">
+        <div class="flex flex-wrap items-center">
+            <img class="h-[100px] sm:h-[120px] md:h-[150px]" src="/home_logo-removebg-preview.png" alt="">
+            <h1 class="pt-4 sm:pt-[30px] md:pt-[50px] text-3xl sm:text-4xl md:text-5xl font-bold">Room Finder</h1>
+        </div>
+        <div class="mt-4 text-center">
+            <h1 class="text-2xl sm:text-3xl">Contact Details</h1>
+        </div>
+        <br>
+        <div class="flex items-center justify-center gap-4 mt-4">
+            <h1 class="text-3xl sm:text-4xl"><i class="ri-mail-fill"></i></h1>
+            <h1 class="text-xl sm:text-2xl">roomfinder@gmail.com</h1>
+        </div>
+        <div class="flex items-center justify-center gap-4 mt-4">
+            <h1 class="text-3xl sm:text-4xl"><i class="ri-phone-fill"></i></h1>
+            <h1 class="text-xl sm:text-2xl">93-4343-2490</h1>
+        </div>
+        <div class="flex justify-center gap-6 sm:gap-12 text-3xl sm:text-4xl mt-6">
+            <h1><i class="ri-instagram-fill"></i></h1>
+            <h1><i class="ri-facebook-box-fill"></i></h1>
+            <h1><i class="ri-twitter-fill"></i></h1>
+        </div>
+    </div>
+            
+        </div>
+        
+
+        <!-- Footer -->
+        <div class="last w-full bg-black  py-16">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-7xl leading-tight">Home Away From <br> Home</h1>
+                <div class="button mt-8 flex flex-wrap justify-center gap-6">
+                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl">billoreankit66@gmail.com</span>
+                    </div>
+                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
+                        <span class="text-lg md:text-xl">+91-9343432490</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="footer flex flex-wrap justify-between items-center gap-6 mt-8 text-white text-sm px-4 md:px-20">
+                <div class="details">
+                    <h1>Privacy Policy</h1>
+                    <h1>About</h1>
+                    <h1>Terms & Conditions</h1>
+                </div>
+                <div class="social">
+                    <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+                    <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
