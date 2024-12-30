@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details - Room Finder</title>
+    <link rel="shortcut icon" href="/images/homeLogo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    
+    <!-- header -->
+    <div class="NavBarDesk&Mob">
+        <!-- Mobile Navbar Toggle -->
+        <div class="block lg:hidden fixed top-0 w-full z-50">
+           <div class="flex items-center gap-8 bg-slate-200 px-2 py-2 shadow-md">
+               <img class="h-12 " src="/images/homeLogo.png" alt="logo">
+               <h1 class="text-xl font-bold">Find Your Room</h1>
+               <button id="mobile-menu-button" class="text-2xl">
+                   <i class="ri-menu-line"></i>
+               </button>
+           </div>
+           <div id="mobile-menu" class=" bg-white shadow-lg flex flex-col items-center gap-4 p-4">
+               <a href="./" class="hover:text-black">Home</a>
+               <a href="./about" class="hover:text-black">About</a>
+               <a href="./contact" class="hover:text-black">Contact</a>
+               <a href="./details" class="hover:text-black">Details</a>
+               <a href="./login" class="hover:text-black ">Login</a>
+               <a href="./signup" class="hover:text-black">Sign Up</a>
+               <a href="/logout">Logout</a>
+               
+               <div class="flex gap-3 text-xl pt-4">
+                   <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+                   <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+                   <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+               </div>
+           </div>
+       </div>
+       <!-- Desktop Navbar -->
+       <div class="navbar hidden lg:flex h-[100px] w-full bg-slate-100 items-center justify-between pr-10 drop-shadow-xl fixed z-[1200]">
+           <div class="navpart1 flex items-center">
+               <img class="h-[100px]" src="/images/homeLogo.png" alt="">
+               <div class="links text-xl pl-10 flex gap-12">
+                   <a href="./" class="hover:border-b-2 hover:border-black">Home</a>
+                   <a href="./about" class="hover:border-b-2 hover:border-black">About</a>
+                   <a href="./contact" class="hover:border-b-2 hover:border-black">Contact</a>
+                   <a href="./details" class="hover:border-b-2 hover:border-black">Details</a>
+                   <a href="./login" class="hover:text-black ">Login</a>
+                   <a href="./signup" class="hover:text-black">Sign Up</a>
+               </div>
+           </div>
+           <div class="navpart2 flex gap-3 text-xl">
+               <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
+               <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
+               <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
+               <div class="flex items-center">
+                   <i class="ri-search-line"></i>
+                   <input class="outline-none ml-2" type="text" placeholder="Search">
+               </div>
+               <div>
+                   <i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
+           </div>
+           <div>
+               <a href="/logout">Logout</a>
+           </div>
+       </div>
+       <div class="fakenav h-[100px] w-full bg-white lg:block hidden"></div>
+       <script>
+           // Mobile Menu Toggle
+           document.getElementById("mobile-menu-button").addEventListener("click", function () {
+               document.getElementById("mobile-menu").classList.toggle("hidden");
+           });
+       </script>
+      </div>
+
+       <!-- Room Details Section -->
+       <section class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Room Images -->
+                <div class="space-y-4">
+                    <img src="/images/roomImg1.jpg" alt="Room Main Image" class="w-full h-96 object-cover rounded-xl shadow-lg">
+                    <div class="grid grid-cols-3 gap-4">
+                        <img src="/images/roomImg2.jpg" alt="Room Image 2" class="w-full h-32 object-cover rounded-lg shadow-md">
+                        <img src="/images/roomImg3.jpg" alt="Room Image 3" class="w-full h-32 object-cover rounded-lg shadow-md">
+                        <img src="/images/roomImg4.jpg" alt="Room Image 4" class="w-full h-32 object-cover rounded-lg shadow-md">
+                    </div>
+                </div>
+                <!-- Room Information -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl font-bold">Cozy 2 BHK Apartment</h1>
+                    <p class="text-2xl font-semibold"><i class="ri-money-rupee-circle-line"></i> 4,500 / month</p>
+                    <div class="flex items-center space-x-4">
+                        <p><i class="ri-map-pin-line"></i> City Center, Example City</p>
+                        <a href="https://www.google.com/maps" class="text-blue-600 hover:underline">View on Map</a>
+                    </div>
+                    <div class="space-y-2">
+                        <p><strong>Type:</strong> 2 BHK</p>
+                        <p><strong>Area:</strong> 1000 sq ft</p>
+                        <p><strong>Furnishing:</strong> Semi-furnished</p>
+                        <p><strong>Available From:</strong> Immediate</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-semibold">Amenities:</h3>
+                        <ul class="list-disc list-inside">
+                            <li>24/7 Security</li>
+                            <li>Power Backup</li>
+                            <li>Parking</li>
+                            <li>Gym</li>
+                            <li>Swimming Pool</li>
+                        </ul>
+                    </div>
+                    <button class="bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition-colors duration-300">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6">Description</h2>
+            <p class="text-lg leading-relaxed">
+                This beautiful 2 BHK apartment is perfect for students or small families looking for a comfortable living space in the heart of the city. The apartment features modern amenities, ample natural light, and a convenient location close to public transportation, shopping centers, and educational institutions.
+            </p>
+            <p class="text-lg leading-relaxed mt-4">
+                The apartment comes with a fully equipped kitchen, spacious bedrooms, and a cozy living area. The building offers 24/7 security, power backup, and access to a gym and swimming pool, ensuring a comfortable and secure living experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- Similar Rooms Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Similar Rooms</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Similar Room Card 1 -->
+                <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white transition-all duration-300">
+                    <img class="h-48 w-full object-cover rounded-t-2xl" src="/images/roomImg5.jpg" alt="Similar Room 1">
+                    <div class="p-4">
+                        <h3 class="text-xl"><i class="ri-money-rupee-circle-line"></i> 4,000</h3>
+                        <p>2 BHK, <i class="ri-map-pin-line"></i> Downtown</p>
+                    </div>
+                </div>
+                <!-- Similar Room Card 2 -->
+                <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white transition-all duration-300">
+                    <img class="h-48 w-full object-cover rounded-t-2xl" src="/images/roomImg6.jpg" alt="Similar Room 2">
+                    <div class="p-4">
+                        <h3 class="text-xl"><i class="ri-money-rupee-circle-line"></i> 4,200</h3>
+                        <p>2 BHK, <i class="ri-map-pin-line"></i> Suburb</p>
+                    </div>
+                </div>
+                <!-- Similar Room Card 3 -->
+                <div class="room-card bg-white border border-black shadow-xl rounded-2xl hover:bg-black hover:text-white transition-all duration-300">
+                    <img class="h-48 w-full object-cover rounded-t-2xl" src="/images/roomImg7.jpg" alt="Similar Room 3">
+                    <div class="p-4">
+                        <h3 class="text-xl"><i class="ri-money-rupee-circle-line"></i> 4,300</h3>
+                        <p>2 BHK, <i class="ri-map-pin-line"></i> City Center</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+       <!-- Footer -->
+       <footer class="bg-gray-900 text-white py-12 mt-2">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Room Finder</h3>
+                    <p class="mb-4">Find your perfect room for rent, whether you're a student or a family.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/pt.billore_ji/" class="text-gray-400 hover:text-white transition"><i class="ri-instagram-line text-2xl"></i></a>
+                        <a href="https://www.youtube.com/@_AAA_GROUP_" class="text-gray-400 hover:text-white transition"><i class="ri-youtube-line text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/ankit-billore-535864294/" class="text-gray-400 hover:text-white transition"><i class="ri-linkedin-fill text-2xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                    <p class="mb-2"><i class="ri-mail-line mr-2"></i> billoreankit66@gmail.com</p>
+                    <p><i class="ri-phone-line mr-2"></i> +91-9343432490</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-2xl">
+                <p>" घर से दूर घर जैसा "</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+
+

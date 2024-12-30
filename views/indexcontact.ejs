@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Room Finder</title>
+    <link rel="shortcut icon" href="/images/homeLogo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
-<body class="font-[gilroy]">
+<body class="font-[gilroy] overflow-x-hidden sm:overflow-x-hidden bg-gray-50">
     <div class="main h-screen w-screen">
         <div class="NavBarDesk&Mob">
             <!-- Mobile Navbar Toggle -->
@@ -23,9 +27,10 @@
                    <a href="./" class="hover:text-black">Home</a>
                    <a href="./about" class="hover:text-black">About</a>
                    <a href="./contact" class="hover:text-black">Contact</a>
-                   <a href="#" class="hover:text-black">Details</a>
-                   <a href="./login.ejs" class="hover:text-black ">Login</a>
-                   <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                   <a href="./details" class="hover:text-black">Details</a>
+                   <a href="./login" class="hover:text-black ">Login</a>
+                   <a href="./signup" class="hover:text-black">Sign Up</a>
+                   <a href="/logout" class="hover:text-black">Logout</a>
                    <div class="flex gap-3 text-xl pt-4">
                        <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
                        <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
@@ -41,9 +46,9 @@
                        <a href="./" class="hover:border-b-2 hover:border-black">Home</a>
                        <a href="./about" class="hover:border-b-2 hover:border-black">About</a>
                        <a href="./contact" class="hover:border-b-2 hover:border-black">Contact</a>
-                       <a href="#" class="hover:border-b-2 hover:border-black">Details</a>
-                       <a href="./login.ejs" class="hover:text-black ">Login</a>
-                       <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                       <a href="./details" class="hover:border-b-2 hover:border-black">Details</a>
+                       <a href="./login" class="hover:text-black ">Login</a>
+                       <a href="./signup" class="hover:text-black">Sign Up</a>
                    </div>
                </div>
                <div class="navpart2 flex gap-3 text-xl">
@@ -54,7 +59,8 @@
                        <i class="ri-search-line"></i>
                        <input class="outline-none ml-2" type="text" placeholder="Search">
                    </div>
-                   <div><i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
+                   <div>
+                    <i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
                </div>
            </div>
            <div class="fakenav h-[100px] w-full bg-white lg:block hidden"></div>
@@ -65,63 +71,161 @@
                });
            </script>
           </div>
-          <div class="relative">
-           
-                <img class="h-[300px] sm:h-[400px] md:h-full w-full object-cover" src="https://img.freepik.com/free-photo/green-sofa-white-living-room-with-free-space_43614-834.jpg" alt="">
-    <div class="contact w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] text-xl sm:text-2xl font-semibold absolute top-[10%] left-1/2 transform -translate-x-1/2 mt-[30px] sm:mt-[50px] px-4">
-        <div class="flex flex-wrap items-center">
-            <img class="h-[100px] sm:h-[120px] md:h-[150px]" src="/home_logo-removebg-preview.png" alt="">
-            <h1 class="pt-4 sm:pt-[30px] md:pt-[50px] text-3xl sm:text-4xl md:text-5xl font-bold">Room Finder</h1>
+          
+
+
+          <div class="main min-h-screen w-screen">
+            <!-- Hero Section with Contact Information -->
+            <section class="relative h-screen">
+                <div class="absolute inset-0">
+                    <img class="h-full w-full object-cover" src="https://img.freepik.com/free-photo/green-sofa-white-living-room-with-free-space_43614-834.jpg" alt="Contact background">
+                    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                </div>
+                <div class="relative z-10 h-full flex flex-col items-center justify-center px-4">
+                    <div class="bg-white bg-opacity-90 rounded-3xl shadow-2xl p-8 w-full max-w-2xl">
+                        <div class="flex flex-col sm:flex-row items-center justify-center mb-8">
+                            <img class="h-24 sm:h-32 mb-4 sm:mb-0" src="/images/homeLogo.png" alt="Room Finder Logo">
+                            <h1 class="text-4xl sm:text-5xl font-bold text-black ml-4">Room Finder</h1>
+                        </div>
+                        <h2 class="text-3xl font-semibold text-center mb-8">Contact Details</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-center gap-4">
+                                <i class="ri-mail-fill text-4xl text-black"></i>
+                                <p class="text-xl sm:text-2xl">roomfinder@gmail.com</p>
+                            </div>
+                            <div class="flex items-center justify-center gap-4">
+                                <i class="ri-phone-fill text-4xl text-black"></i>
+                                <p class="text-xl sm:text-2xl">93-4343-2490</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center gap-8 text-4xl mt-8">
+                            <a href="#" class="text-black hover:text-gray-700 transition-colors duration-300">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="#" class="text-black hover:text-gray-700 transition-colors duration-300">
+                                <i class="ri-facebook-box-fill"></i>
+                            </a>
+                            <a href="#" class="text-black hover:text-gray-700 transition-colors duration-300">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Contact Form Section -->
+            <section class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
+                    <form class="max-w-2xl mx-auto">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition-colors duration-300">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+    
+            <!-- Map Section -->
+            <section class="py-16 md:py-24 bg-gray-100">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Find Us</h2>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2176767606308!2d-73.98823492342224!3d40.748440471440665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1708653988075!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="mt-4 text-center">
-            <h1 class="text-2xl sm:text-3xl">Contact Details</h1>
-        </div>
-        <br>
-        <div class="flex items-center justify-center gap-4 mt-4">
-            <h1 class="text-3xl sm:text-4xl"><i class="ri-mail-fill"></i></h1>
-            <h1 class="text-xl sm:text-2xl">roomfinder@gmail.com</h1>
-        </div>
-        <div class="flex items-center justify-center gap-4 mt-4">
-            <h1 class="text-3xl sm:text-4xl"><i class="ri-phone-fill"></i></h1>
-            <h1 class="text-xl sm:text-2xl">93-4343-2490</h1>
-        </div>
-        <div class="flex justify-center gap-6 sm:gap-12 text-3xl sm:text-4xl mt-6">
-            <h1><i class="ri-instagram-fill"></i></h1>
-            <h1><i class="ri-facebook-box-fill"></i></h1>
-            <h1><i class="ri-twitter-fill"></i></h1>
-        </div>
-    </div>
-            
-        </div>
+    
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+    
+            // Hero section animation
+            gsap.from(".bg-white", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".bg-white",
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+    
+            // Contact form animation
+            gsap.from("form", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "form",
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+    
+            // Map animation
+            gsap.from(".aspect-w-16", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".aspect-w-16",
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        </script>
         
 
         <!-- Footer -->
-        <div class="last w-full bg-black  py-16">
-            <div class="text-center text-white">
-                <h1 class="text-4xl md:text-7xl leading-tight">Home Away From <br> Home</h1>
-                <div class="button mt-8 flex flex-wrap justify-center gap-6">
-                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl">billoreankit66@gmail.com</span>
+        <footer class="bg-gray-900 text-white py-12 ">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Room Finder</h3>
+                        <p class="mb-4">Find your perfect room for rent, whether you're a student or a family.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/pt.billore_ji/" class="text-gray-400 hover:text-white transition"><i class="ri-instagram-line text-2xl"></i></a>
+                            <a href="https://www.youtube.com/@_AAA_GROUP_" class="text-gray-400 hover:text-white transition"><i class="ri-youtube-line text-2xl"></i></a>
+                            <a href="https://www.linkedin.com/in/ankit-billore-535864294/" class="text-gray-400 hover:text-white transition"><i class="ri-linkedin-fill text-2xl"></i></a>
+                        </div>
                     </div>
-                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl">+91-9343432490</span>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                        </ul>
                     </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                        <p class="mb-2"><i class="ri-mail-line mr-2"></i> billoreankit66@gmail.com</p>
+                        <p><i class="ri-phone-line mr-2"></i> +91-9343432490</p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-2xl">
+                    <p>" घर से दूर घर जैसा "</p>
                 </div>
             </div>
-        
-            <div class="footer flex flex-wrap justify-between items-center gap-6 mt-8 text-white text-sm px-4 md:px-20">
-                <div class="details">
-                    <h1>Privacy Policy</h1>
-                    <h1>About</h1>
-                    <h1>Terms & Conditions</h1>
-                </div>
-                <div class="social">
-                    <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
-                    <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
-                    <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
-                </div>
-            </div>
-        </div>
+        </footer>
     </div>
 </body>
 </html>

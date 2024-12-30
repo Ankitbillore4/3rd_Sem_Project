@@ -48,6 +48,9 @@ app.get("/about", (req, res) => {
 app.get("/contact", (req, res) => {
   res.render("indexcontact");
 })
+app.get("/details", (req, res) => {
+  res.render("indexdetails");
+})
 
 // Login route
 app.get("/login", (req, res) => {

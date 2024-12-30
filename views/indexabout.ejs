@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About Room Finder</title>
+    <link rel="shortcut icon" href="/images/homeLogo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
-<body class="font-[gilroy]">
+<body class="font-[gilroy] overflow-x-hidden">
     <!-- Main Container -->
     <div class="main w-screen bg-slate-200 overflow-hidden">
         <div class="NavBarDesk&Mob">
@@ -26,9 +29,10 @@
                    <a href="./" class="hover:text-black">Home</a>
                    <a href="./about" class="hover:text-black">About</a>
                    <a href="./contact" class="hover:text-black">Contact</a>
-                   <a href="#" class="hover:text-black">Details</a>
-                   <a href="./login.ejs" class="hover:text-black">Login</a>
-                   <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                   <a href="./details" class="hover:text-black">Details</a>
+                   <a href="./login" class="hover:text-black">Login</a>
+                   <a href="./signup" class="hover:text-black">Sign Up</a>
+                   <a href="/logout" class="hover:text-black">Logout</a>
 
                    <div class="flex gap-3 text-xl pt-4">
                        <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
@@ -45,9 +49,9 @@
                        <a href="./" class="hover:border-b-2 hover:border-black">Home</a>
                        <a href="./about" class="hover:border-b-2 hover:border-black">About</a>
                        <a href="./contact" class="hover:border-b-2 hover:border-black">Contact</a>
-                       <a href="#" class="hover:border-b-2 hover:border-black">Details</a>
-                       <a href="./login.ejs" class="hover:text-black ">Login</a>
-                       <a href="./signup.ejs" class="hover:text-black">Sign Up</a>
+                       <a href="./details" class="hover:border-b-2 hover:border-black">Details</a>
+                       <a href="./login" class="hover:text-black ">Login</a>
+                       <a href="./signup" class="hover:text-black">Sign Up</a>
                    </div>
                </div>
                <div class="navpart2 flex gap-3 text-xl">
@@ -58,7 +62,11 @@
                        <i class="ri-search-line"></i>
                        <input class="outline-none ml-2" type="text" placeholder="Search">
                    </div>
-                   <div><i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
+                   <div>
+                    <i class="ri-map-pin-line"></i><a href="https://maps.google.com/">Location</a></div>
+               </div>
+               <div>
+                <a href="/logout">Logout</a>
                </div>
            </div>
            <script>
@@ -69,69 +77,166 @@
            </script>
           </div>
        <!-- Hero Section -->
-<div class="image relative pt-[100px]">
-    <img class="w-full object-cover h-[300px] md:h-auto" src="https://media.designcafe.com/wp-content/uploads/2022/07/29185240/industrial-rustic-living-room-in-earthy-tones.jpg" alt="Hero Image">
-    <div class="about absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center px-4">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl bg-black text-white font-semibold px-6 py-2 rounded-2xl">A Comfortable Rooms</h1>
-        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl mt-4">For</h1>
-        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl bg-white font-semibold text-black px-6 py-2 rounded-2xl mt-4">Students And Families</h1>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold bg-black text-white border-2 border-black w-[70%] sm:w-[50%] md:w-[30%] rounded-full px-4 py-3 sm:px-6 sm:py-4 mt-6 mx-auto">250+</h2>
-        <h2 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold mt-6 px-4 py-3 bg-slate-300 text-black rounded-2xl mx-auto">Happy Customers</h2>
-    </div>
-</div>
-
-<!-- Feedback Section -->
-<div class="feedback relative mt-16 px-4 sm:px-10 md:px-20">
-    <div class="box flex flex-wrap justify-center gap-8">
-        <!-- Feedback 1 -->
-        <div class="feed1 w-full sm:w-[80%] md:w-[45%] lg:w-[30%] bg-white shadow-xl border-2 border-black p-4 rounded-xl">
-            <p>I recently used your website to find a room for rent, and I must say, I'm thoroughly impressed with the experience.</p>
-            <div class="text-xl sm:text-2xl pt-2 text-yellow-500">
-                <i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-half-line"></i>
+       <section class="relative pt-16 md:pt-24 lg:pt-32">
+        <div class="container mx-auto px-4">
+            <div class="relative">
+                <img class="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-3xl shadow-2xl" src="https://media.designcafe.com/wp-content/uploads/2022/07/29185240/industrial-rustic-living-room-in-earthy-tones.jpg" alt="Hero Image">
+                <div class="absolute inset-0 bg-black bg-opacity-40 rounded-3xl"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full px-4">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4">Comfortable Rooms</h1>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-4">For</h2>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-white text-black font-bold px-6 py-2 rounded-full inline-block mb-6">Students and Families</h2>
+                    <div class="bg-black text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold rounded-full w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center mx-auto mb-6">
+                        250+
+                    </div>
+                    <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold bg-white text-black px-6 py-2 rounded-full inline-block">Happy Customers</h3>
+                </div>
             </div>
         </div>
-        <img class="w-16 sm:w-20 md:w-24 lg:w-[10%] h-16 sm:h-20 md:h-24 rounded-xl border-2 border-black object-cover" src="https://study.gov.pl/sites/default/files/styles/news/public/field/image/news/adobestock_165061057_autor_antonioguillem_1.jpeg?itok=xFmtva__" alt="Person 1">
-    </div>
+    </section>
 
-    <div class="box flex flex-wrap justify-center gap-8 mt-8">
-        <!-- Feedback 2 -->
-        <div class="feed2 w-full sm:w-[80%] md:w-[45%] lg:w-[30%] bg-white shadow-xl border-2 border-black p-4 rounded-xl">
-            <p>I found the user interface to be clean and user-friendly. The descriptions and photos were helpful.</p>
-            <div class="text-xl sm:text-2xl pt-2 text-yellow-500">
-                <i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i>
+  <!-- Feedback Section -->
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Customers Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Feedback 1 -->
+            <div class="feedback-card bg-white shadow-xl border-2 border-black rounded-xl p-6 transition-transform duration-300 hover:scale-105">
+                <div class="flex items-start mb-4">
+                    <img class="w-16 h-16 rounded-full border-2 border-black object-cover mr-4" src="https://study.gov.pl/sites/default/files/styles/news/public/field/image/news/adobestock_165061057_autor_antonioguillem_1.jpeg?itok=xFmtva__" alt="Person 1">
+                    <div>
+                        <p class="text-lg mb-2">"I recently used your website to find a room for rent, and I must say, I'm thoroughly impressed with the experience."</p>
+                        <div class="text-xl text-yellow-500">
+                            <i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-half-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback 2 -->
+            <div class="feedback-card bg-white shadow-xl border-2 border-black rounded-xl p-6 transition-transform duration-300 hover:scale-105">
+                <div class="flex items-start mb-4">
+                    <img class="w-16 h-16 rounded-full border-2 border-black object-cover mr-4" src="https://www.thoughtco.com/thmb/V-FbvAWybmcx5xDJir0i4x9Qhto=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-157522427-5c8d8df046e0fb000187a2d9.jpg" alt="Person 2">
+                    <div>
+                        <p class="text-lg mb-2">"I found the user interface to be clean and user-friendly. The descriptions and photos were helpful."</p>
+                        <div class="text-xl text-yellow-500">
+                            <i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i><i class="ri-star-line"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <img class="w-16 sm:w-20 md:w-24 lg:w-[10%] h-16 sm:h-20 md:h-24 rounded-xl border-2 border-black object-cover" src="https://www.thoughtco.com/thmb/V-FbvAWybmcx5xDJir0i4x9Qhto=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-157522427-5c8d8df046e0fb000187a2d9.jpg" alt="Person 2">
     </div>
+</section>
+ <!-- About Us Section -->
+ <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Room Finder</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Room Finder" class="rounded-xl shadow-xl w-full h-auto">
+            </div>
+            <div class="about-content">
+                <p class="text-lg mb-6">Room Finder is dedicated to helping students and families find comfortable and affordable living spaces. Our platform connects room seekers with a wide range of options, ensuring that everyone can find a place that feels like home.</p>
+                <p class="text-lg mb-6">With over 250 happy customers, we pride ourselves on our user-friendly interface, detailed listings, and commitment to customer satisfaction. Whether you're a student looking for a cozy dorm alternative or a family in need of a temporary living arrangement, Room Finder has you covered.</p>
+                <a href="#" class="inline-block bg-black text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition-colors duration-300">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
 </div>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero section animation
+    gsap.from(".hero-content", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".hero-content",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    // Feedback cards animation
+    gsap.utils.toArray(".feedback-card").forEach((card, i) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            delay: i * 0.2,
+            scrollTrigger: {
+                trigger: card,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    });
+
+    // About section animation
+    gsap.from(".about-image", {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".about-image",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    gsap.from(".about-content", {
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".about-content",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+        }
+    });
+</script>
 
         <!-- Footer -->
-        <div class="last w-full bg-black mt-16 py-16">
-            <div class="text-center text-white">
-                <h1 class="text-4xl md:text-7xl leading-tight">Home Away From <br> Home</h1>
-                <div class="button mt-8 flex flex-wrap justify-center gap-6">
-                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl">billoreankit66@gmail.com</span>
+        <footer class="bg-gray-900 text-white py-12 mt-2">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Room Finder</h3>
+                        <p class="mb-4">Find your perfect room for rent, whether you're a student or a family.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/pt.billore_ji/" class="text-gray-400 hover:text-white transition"><i class="ri-instagram-line text-2xl"></i></a>
+                            <a href="https://www.youtube.com/@_AAA_GROUP_" class="text-gray-400 hover:text-white transition"><i class="ri-youtube-line text-2xl"></i></a>
+                            <a href="https://www.linkedin.com/in/ankit-billore-535864294/" class="text-gray-400 hover:text-white transition"><i class="ri-linkedin-fill text-2xl"></i></a>
+                        </div>
                     </div>
-                    <div class="h-16 md:h-[80px] w-60 rounded-full border text-white hover:text-black hover:bg-white flex items-center justify-center">
-                        <span class="text-lg md:text-xl">+91-9343432490</span>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+                        </ul>
                     </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                        <p class="mb-2"><i class="ri-mail-line mr-2"></i> billoreankit66@gmail.com</p>
+                        <p><i class="ri-phone-line mr-2"></i> +91-9343432490</p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-2xl">
+                    <p>" घर से दूर घर जैसा "</p>
                 </div>
             </div>
-        
-            <div class="footer flex flex-wrap justify-between items-center gap-6 mt-8 text-white text-sm px-4 md:px-20">
-                <div class="details">
-                    <h1>Privacy Policy</h1>
-                    <h1>About</h1>
-                    <h1>Terms & Conditions</h1>
-                </div>
-                <div class="social">
-                    <a href="https://www.instagram.com/pt.billore_ji/"><i class="ri-instagram-line"></i></a>
-                    <a href="https://www.youtube.com/@_AAA_GROUP_"><i class="ri-youtube-line"></i></a>
-                    <a href="https://www.linkedin.com/in/ankit-billore-535864294/"><i class="ri-linkedin-fill"></i></a>
-                </div>
-            </div>
-        </div>
+        </footer>
        
     </div>
 </body>
